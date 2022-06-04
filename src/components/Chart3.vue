@@ -28,8 +28,8 @@ export default {
         option = {
             // backgroundColor: "#000",
             title: {
-                text: "b站视频投稿时间、热度，观众使用b站时间段",
-                subtext: "By 计院不卷组            ",
+                text: "",
+                subtext: "",
                 left:'center',
                 textStyle: {
                     color: "#fff",

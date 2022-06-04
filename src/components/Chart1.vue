@@ -1,22 +1,23 @@
 <template>
     <div id="myChart1" style="border: 0px solid white;position: relative;"
-         :style="{width: width + 'px', height: height1 + 'px',left:left+'px'}" >
-        <div></div>
+         :style="{width: width1 + 'px', height: height1 + 'px',left:left+'px'}" >
     </div>
     <div id="myChart2" style="border: 0px solid white"
-             :style="{width: width + 'px', height: height2 + 'px'}">
+         :style="{width: width2 + 'px', height: height2 + 'px'}">
     </div>
 </template>
 
 <script>
 import echarts from '@/static/echarts'
 import Vue from '@/static/vue'
+import WordCloud1 from "@/components/WordCloud1";
 
 export  default {
 
     data(){
         return{
-            width:800,
+            width1:800,
+            width2:400,
             height1:320,
             height2:490,
             left: 0,
@@ -30,8 +31,7 @@ export  default {
                     shou_cang:297315,
                     tou_bi:506001,
                     zhuan_fa:55655,
-                },
-                {
+                }, {
                     name: "Vup",
                     value: 36975357,
 
@@ -39,8 +39,7 @@ export  default {
                     shou_cang:732984,
                     tou_bi:1428067,
                     zhuan_fa:270778,
-                },
-                {
+                }, {
                     name: "生活",
                     value: 307355075,
 
@@ -294,19 +293,17 @@ export  default {
         // 使用刚指定的配置项和数据显示图表。
         myChart.setOption(option);
         this.myChart2.setOption(this.option1)
-        //mychart.off('click');
         myChart.on('click', (params)=> {
             flag = params.name;
             for (var i=0;i< length;i++) {
-                if(this.partition[i].name == flag)
+                if(this.partition[i].name === flag)
                 {
                     this.flag=flag;
+                    // this.clickFlag(i);
                     break;
                 }
             }
         });
-
-
     },
     watch:{
         flag:{
@@ -328,7 +325,15 @@ export  default {
             }
         },
     },
+    emits:['clickFlag'],
+    setup(props, {emit}) {
+        function clickFlag(i){
+            emit('clickFlag',i)
+        }
+        return {clickFlag}
+    },
 }
+
 </script>
 
 <style scoped>
