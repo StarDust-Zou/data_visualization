@@ -42,7 +42,7 @@ export default {
                     ],
                     "data": [
                         {
-                            "name": "\u554a\u554a\u554a",
+                            "name": "\u559c\u6b22",
                             "value": 6195,
                             "textStyle": {
 
@@ -123,7 +123,7 @@ export default {
                             }
                         },
                         {
-                            "name": "\u559c\u6b22",
+                            "name": "\u554a\u554a\u554a",
                             "value": 1916,
                             "textStyle": {
                                     "color": "rgb(72,108,138)"

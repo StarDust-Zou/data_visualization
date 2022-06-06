@@ -137,7 +137,11 @@ export  default {
             },
             legend: {
                 top: '5%',
-                left: 'center'
+                left: 'center',
+                textStyle:{
+                    color:'white'
+                }
+               
             },
             series: [
                 {
@@ -166,7 +170,7 @@ export  default {
                     },
                     data: [
                         { value: this.partition[0].dian_zan, name: '点赞' },
-                        { value: this.partition[0].shou_cang, name: '收藏' },
+                        { value: this.partition[0].shou_cang, name: '收藏'},
                         { value: this.partition[0].tou_bi, name: '投币' },
                         { value: this.partition[0].zhuan_fa, name: '转发' },
                     ]
@@ -195,6 +199,7 @@ export  default {
             data.push({
                 value: this.partition[i].value,
                 name: this.partition[i].name,
+                
                 itemStyle: {
                     normal: {
                         borderWidth: 5,

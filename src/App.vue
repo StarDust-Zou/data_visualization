@@ -80,7 +80,7 @@ export default {
 
 <style>
 #app {
-    background:url("./assets/bgimg.jpg");
+    background:url("./assets/1.jpg");
     width:100%;
     height:100%;
     position:fixed;
